@@ -10,7 +10,7 @@ class Shape{
 }
 class Circle extends Shape{
 	
-	void area(int r1)
+	void area()
 	{
 	    float pi=3.14f;
 	    int r=2;
