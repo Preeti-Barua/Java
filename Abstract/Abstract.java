@@ -11,10 +11,11 @@ abstract class Card
 	  
 	
 
-	  Card(String nameoncard, String number, String cvv) {
+	 Card(String nameoncard, String number, String cvv)
+	 {
 			
 			// TODO Auto-generated constructor stub
-		    this.nameoncard=nameoncard;
+		     this.nameoncard=nameoncard;
 			 this.number=number;
 	    	 this.cvv=cvv;
 	    	
@@ -24,6 +25,7 @@ abstract class Card
 	    	 System.out.println("Cvv:" +this.cvv);
 	    	 
 	  }
+	  
         abstract void pay(double amount);
 
 	
@@ -49,9 +51,9 @@ class Creditcard extends Card
 
 	
 	
-       void pay(double amount) {
+        void pay(double amount) {
 		// TODO Auto-generated method stub
-		System.out.println("amount in creditclass"+amount);
+		System.out.println("amount in creditclass::"+amount);
       	   
 		
 	}
@@ -67,7 +69,7 @@ class Debitcard extends Card
 
         void pay(double amount)
 	{
-		System.out.println("amount in debitclass"+amount);
+		System.out.println("amount in debitclass::"+amount);
 
 	}
         
