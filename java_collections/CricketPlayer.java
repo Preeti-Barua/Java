@@ -4,6 +4,7 @@ package javaAssignment6;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Scanner;
 
 /* 1) Write a Java menu driven program to perform the following operations-using Array List 
        Create a class called Player with the following instance variable 
@@ -78,8 +79,8 @@ class AlistPlayer
 		      Player p= new Player("Dhoni",2300,2);
 		      Player p1= new Player("pant",2000,1);
 		      Player p2= new Player("jadeja",400,3);
-		      Player p3= new Player("Rohit",2310,1);
-		      Player p4= new Player("yuzi",1000,3);
+		      Player p3= new Player("Rohit",2310,4);
+		      Player p4= new Player("yuzi",1000,5);
 		      
 		       al.add(p);
 		       al.add(p1);
@@ -92,7 +93,29 @@ class AlistPlayer
 		 	  
 		 
 
-	 }    
+	 } 
+	
+	static void removeplayer(ArrayList<Player>al)
+	{
+		
+		System.out.println("-------------------------------------------------------------------------");
+		ArrayList<Player> al1= new ArrayList<Player>();
+		for(Player px: al)
+		{
+			if(px.totalruns<2000)
+			{
+				al1.add(px);
+			}
+		}
+		al.removeAll(al1);
+		
+		for(Player a:al)
+		{
+		System.out.println(a);
+		}
+		
+		System.out.println("----------------------------------------------------------------------------");
+	}
 
 
 
@@ -113,16 +136,41 @@ static  void Sortnameofplayers(ArrayList<Player>al)
 
 
 
-
-
-public  static void displayplayer(ArrayList<Player>al)
-{
-	  for(Player l: al)
-	  {
-		  System.out.println(l);
-		
-	  }
+public static void displayplayer(ArrayList<Player> al) {
+	// TODO Auto-generated method stub
+	
+	
+	      for( Player a:al)
+	      {
+	    	  System.out.println(a);
+	    	 
+	    	  
+	      }
 }
+
+public static void update(ArrayList<Player>al)
+
+{
+	        Scanner s= new Scanner(System.in);
+	        int no= s.nextInt();
+	        
+	       for(Player o:al)
+	       {
+	    	   if(o.noofwickets==no)
+	    	   {
+	    		   o.Playername="vpor";
+	    	   }
+	       }
+	        
+
+}
+
+
+
+
+
+
+
 
 }
 
@@ -138,16 +186,28 @@ public class CricketPlayer {
 		AlistPlayer.displayplayer(al);
         System.out.println();
         System.out.println();
+        
+		System.out.println("sorted by names");
+		AlistPlayer.Sortnameofplayers(al);
+		AlistPlayer.displayplayer(al);
+		 System.out.println();
+		 System.out.println();
+        
+    	System.out.println("update the value ");
+		AlistPlayer.update(al);
+		AlistPlayer.displayplayer(al);
+		
 		
 		System.out.println("Players who have maximum no of runs: ");
 		AlistPlayer.sortplayerbyscore(al);
 		AlistPlayer.displayplayer(al);
+		System.out.println("after removing player who have less runs");
+		AlistPlayer.removeplayer(al);
+		
 		 System.out.println();
 		 System.out.println();
 		
-		System.out.println("sorted by names");
-		AlistPlayer.Sortnameofplayers(al);
-		AlistPlayer.displayplayer(al);
+
 		
 		
 		
